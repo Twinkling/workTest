@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home page</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../css/app.css">
+    <link rel="stylesheet" type="text/css" href="../css/iSlider.min.css">    
+    <script type="text/javascript">
+        (function () {
+            var Dpr = 1,
+                uAgent = window.navigator.userAgent;
+            var isIOS = uAgent.match(/iphone/i);
+            var isYIXIN = uAgent.match(/yixin/i);
+            var is2345 = uAgent.match(/Mb2345/i);
+            var ishaosou = uAgent.match(/mso_app/i);
+            var isSogou = uAgent.match(/sogoumobilebrowser/ig);
+            var isLiebao = uAgent.match(/liebaofast/i);
+            var isGnbr = uAgent.match(/GNBR/i);
+            function resizeRoot() {
+                var wWidth = (screen.width > 0) ? (window.innerWidth >= screen.width || window.innerWidth == 0) ? screen.width :
+                    window.innerWidth : window.innerWidth,
+                    wDpr, wFsize;
+                var wHeight = (screen.height > 0) ? (window.innerHeight >= screen.height || window.innerHeight == 0) ?
+                    screen.height : window.innerHeight : window.innerHeight;
+                if (window.devicePixelRatio) {
+                    wDpr = window.devicePixelRatio;
+                } else {
+                    wDpr = isIOS ? wWidth > 818 ? 3 : wWidth > 480 ? 2 : 1 : 1;
+                }
+                if (isIOS) {
+                    wWidth = screen.width;
+                    wHeight = screen.height;
+                }
+                // if(window.orientation==90||window.orientation==-90){
+                //     wWidth = wHeight;
+                // }else if((window.orientation==180||window.orientation==0)){
+                // }
+                if (wWidth > wHeight) {
+                    wWidth = wHeight;
+                }
+                wFsize = wWidth > 1080 ? 144 : wWidth / 7.5;
+                wFsize = wFsize > 32 ? wFsize : 32;
+                window.screenWidth_ = wWidth;
+                if (isYIXIN || is2345 || ishaosou || isSogou || isLiebao || isGnbr) { //YIXIN 和 2345 这里有个刚调用系统浏览器时候的bug，需要一点延迟来获取
+                    setTimeout(function () {
+                        wWidth = (screen.width > 0) ? (window.innerWidth >= screen.width || window.innerWidth == 0) ?
+                            screen.width : window.innerWidth : window.innerWidth;
+                        wHeight = (screen.height > 0) ? (window.innerHeight >= screen.height || window.innerHeight ==
+                            0) ? screen.height : window.innerHeight : window.innerHeight;
+                        wFsize = wWidth > 1080 ? 144 : wWidth / 7.5;
+                        wFsize = wFsize > 32 ? wFsize : 32;
+                        // document.getElementsByTagName('html')[0].dataset.dpr = wDpr;
+                        document.getElementsByTagName('html')[0].style.fontSize = wFsize + 'px';
+                    }, 500);
+                } else {
+                    // document.getElementsByTagName('html')[0].dataset.dpr = wDpr;
+                    document.getElementsByTagName('html')[0].style.fontSize = wFsize + 'px';
+                }
+                // alert("fz="+wFsize+";dpr="+window.devicePixelRatio+";UA="+uAgent+";width="+wWidth+";sw="+screen.width+";wiw="+window.innerWidth+";wsw="+window.screen.width+window.screen.availWidth);
+            }
+            resizeRoot();
+        })();
+    </script>
+    <style type="text/css">        
+        #iSliderWrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-nav">
+        <div class="topnav-list net-farm clearfix">
+            <a href="#">
+                <div class="topnav-item">
+                    <div class="topnav-item-text">网上农场</div>
+                    <div class="topnav-item-img">
+                        <img src="../imgs/home/net_farm.png" alt="">
+                    </div>
+                </div>
+            </a>
+            <div class="topnav-sub clearfix">
+                <a href="#"><div class="topnav-sub-item">水果类</div></a>
+                <a href="#"><div class="topnav-sub-item">蔬菜类</div></a>
+                <a href="#"><div class="topnav-sub-item">粮、油类</div></a>
+                <a href="#"><div class="topnav-sub-item">水产品</div></a>
+            </div>
+        </div>
+        <div class="topnav-list tour-holiday clearfix">
+            <a href="#">
+                <div class="topnav-item">
+                    <div class="topnav-item-text">旅游度假</div>
+                    <div class="topnav-item-img">
+                        <img src="../imgs/home/tour_holiday.png" alt="">
+                    </div>
+                </div>
+            </a>
+            <div class="topnav-sub clearfix">
+                <a href="#"><div class="topnav-sub-item">周边旅游</div></a>
+                <a href="#"><div class="topnav-sub-item">民宿酒店</div></a>
+                <a href="#"><div class="topnav-sub-item">美食特产</div></a>
+            </div>
+        </div>
+        <div class="topnav-list info-gallery clearfix">
+            <a href="#">
+                <div class="topnav-item">
+                    <div class="topnav-item-text">信息长廊</div>
+                    <div class="topnav-item-img">
+                        <img src="../imgs/home/info_gallery.png" alt="">
+                    </div>
+                </div>
+            </a>
+            <div class="topnav-sub clearfix">
+                <a href="#"><div class="topnav-sub-item">政策公告</div></a>
+                <a href="#"><div class="topnav-sub-item">农业动态</div></a>
+                <a href="#"><div class="topnav-sub-item">农业展厅</div></a>
+            </div>
+        </div>
+    </div>
+    <div class="main-list-item">
+        <div class="title">
+            <div class="net-farm-title-icon"></div>
+            <h1>网上农场</h1>
+            <div class="more" style="float: right;"><a href="#">更多 ></a></div>
+        </div>
+        <div class="net-farm-itemset clearfix">
+            <div class="net-farm-item-wrap">
+                <a href="#">
+                    <div class="item-img"><img src="../imgs/home/bxg.png" alt=""></div>
+                    <div class="item-text">百香果</div>
+                </a>
+            </div>
+            <div class="net-farm-item-wrap">
+                <a href="#">
+                    <div class="item-img"><img src="../imgs/home/mango.png" alt=""></div>
+                    <div class="item-text">芒果</div>
+                </a>
+            </div>
+            <div class="net-farm-item-wrap">
+                <a href="#">
+                    <div class="item-img"><img src="../imgs/home/yt.png" alt=""></div>
+                    <div class="item-text">樱桃</div>
+                </a>
+            </div>
+            <div class="net-farm-item-wrap">
+                <a href="#">
+                    <div class="item-img"><img src="../imgs/home/xg.png" alt=""></div>
+                    <div class="item-text">西瓜</div>
+                </a>
+            </div>
+            <div class="net-farm-item-wrap">
+                <a href="#">
+                    <div class="item-img"><img src="../imgs/home/xhs.png" alt=""></div>
+                    <div class="item-text">西红柿</div>
+                </a>
+            </div>
+            <div class="net-farm-item-wrap">
+                <a href="#">
+                    <div class="item-img"><img src="../imgs/home/hg.png" alt=""></div>
+                    <div class="item-text">黄瓜</div>
+                </a>
+            </div>
+            <div class="net-farm-item-wrap">
+                <a href="#">
+                    <div class="item-img"><img src="../imgs/home/qz.png" alt=""></div>
+                    <div class="item-text">茄子</div>
+                </a>
+            </div>
+            <div class="net-farm-item-wrap">
+                <a href="#">
+                    <div class="item-img"><img src="../imgs/home/wd.png" alt=""></div>
+                    <div class="item-text">豌豆</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="main-list-item">
+        <div class="title">
+            <div class="info-gallery-title-icon"></div>
+            <h1>信息长廊</h1>
+        </div>
+        <div class="info-gallery-item">
+            <div class="info-gallery-item-wrap">
+                <a href="#"><img src="../imgs/home/xxcl.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <div class="main-list-item">
+        <div class="title">
+            <div class="tour-holiday-title-icon"></div>
+            <h1>乡游农村</h1>
+            <div class="more" style="float: right;">更多 ></div>
+        </div>
+        <div class="tour-holiday-items clearfix">
+            <div class="tour-holiday-item-left">
+                <a href="#"><div class="item-img-wrap"><img src="../imgs/home/gly.jpg" alt=""><div class="img-shadow"><span>-鼓浪屿-</span></div></div></a>
+            </div>
+            <div class="tour-holiday-item-right">
+                <a href="#"><div class="item-img-wrap"><img src="../imgs/home/rgy.jpg" alt=""><div class="img-shadow"><span>日光岩</span></div></div></a>
+                <a href="#"><div class="item-img-wrap"><img src="../imgs/home/szt.jpg" alt=""><div class="img-shadow"><span>双子塔</span></div></div></a>
+            </div>
+        </div>
+    </div>
+    <div class="main-full-list-item">
+        <div class="title">
+            <div class="main-full-title-icon"></div>
+            <h1>镇街展厅</h1>
+        </div>
+        <div class="town-hall-item">  
+            <!-- <div class="town-hall-slide-item"><div class="town-hall-img-wrap"><img src="../imgs/home/banner/szt.jpg" alt=""></div><span>-双子塔-</span></div>           -->
+            <div id="iSliderWrapper"></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="../js/iSlider.min.js"></script>
+    <script type="text/javascript" src="../js/iSlider.animate.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var data = [
+                {content: '<a href="#"><div class="town-hall-slide-item"><div class="town-hall-img-wrap"><img src="../imgs/home/banner/hlq.jpg" alt=""></div><span>-湖里区-</span></div></a>'},
+                {content: '<a href="#"><div class="town-hall-slide-item"><div class="town-hall-img-wrap"><img src="../imgs/home/banner/smq.jpg" alt=""></div><span>-思明区-</span></div></a>'},
+                {content: '<a href="#"><div class="town-hall-slide-item"><div class="town-hall-img-wrap"><img src="../imgs/home/banner/szt.jpg" alt=""></div><span>-双子塔-</span></div></a>'}
+            ];
+            var islider = new iSlider({
+                dom: document.getElementById('iSliderWrapper'),
+                data: data,
+                isVertical: false,
+                isLooping: true,
+                isAutoplay: false,
+                isOverspread: 0,
+                animateType: 'depth',
+                animateTime: 2000,
+                duration: 2000
+            });
+        });
+    </script>
+</body>
+</html>
