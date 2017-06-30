@@ -181,13 +181,14 @@ img {
 .net-farm-title-icon,
 .info-gallery-title-icon,
 .tour-holiday-title-icon,
-.main-full-title-icon {
+.main-full-title-icon,
+.main-position-icon {
     display: inline-block;
     vertical-align: middle;
     width: .32rem;
     height: .32rem;
     background: url('../imgs/icons/icon.png') no-repeat;
-    background-size: 1.46rem .29rem;
+    background-size: 1.46rem .68rem;
 }
 .net-farm-title-icon {
     background-position: 0 0;
@@ -200,6 +201,9 @@ img {
 }
 .main-full-title-icon {
     background-position: -1.16rem 0;
+}
+.main-position-icon {
+    background-position: 0 -.39rem;
 }
 .title h1 {
     display: inline-block;
@@ -518,6 +522,8 @@ img {
     font-size: .2rem;
     line-height: .3rem;
     color: #666;
+    height: .6rem;
+    overflow: hidden;
 }
 .new-item-author {
     font-size: 0;
@@ -553,12 +559,70 @@ img {
     color: #999;
     font-size: .24rem;
 }
-
+.collect-list-items {
+    padding-top: .3rem;
+}
+.collect-item-wrap {
+    padding: .3rem;
+    border-bottom: 1px solid #dcdcdc;
+    background-color: #fff;
+    font-size: 0;
+}
+.collect-item-img-wrap,
+.collect-item-desc {
+    display: inline-block;
+    vertical-align: top;
+}
+.collect-item-desc {
+    margin-left: .3rem;
+    width: 4.2rem;
+}
+.collect-item-img-wrap {
+    width: 2.4rem;
+    height: 2.3rem;
+}
+.collect-item-text {
+    font-size: .3rem;
+    line-height: .5rem;
+}
+.collect-item-name {
+    display: inline-block;
+    color: #090909;
+}
+.collect-item-price {
+    float: right;
+    color: #ed3b5a;
+}
+.collect-item-detail-desc p {
+    font-size: .22rem;
+    line-height: .32rem;
+    color: #999;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.collect-item-operate {
+    margin-top: .2rem;
+    font-size: .22rem;
+    line-height: .6rem;
+}
+.collect-item-contact {
+    display: inline-block;
+    width: 2.4rem;
+    height: .6rem;
+    background-color: #68ceb7;
+    color: #fff;
+    text-align: center;
+}
+.collect-item-cancel {
+    float: right;
+    color: #68ceb7;
+}
 /*
  * -- new && hot && collect of find page -- start --
  */
 .NHC {
-    display: none;
+    /*display: none;*/
 }
 .NHC .hd {
     margin: .3rem .3rem 0 .3rem;
@@ -589,3 +653,59 @@ img {
  * -- new && hot && collect of find page -- end --
  */
 
+/*
+ * -- tour && goods detail page -- start --
+ */
+.main-summary {
+    padding: .3rem;
+    background-color: #fff;
+}
+.main-summary-text {
+    font-size: .3rem;
+    line-height: .6rem;
+}
+.main-summary-name {
+    display: inline-block;
+    color: #090909;
+}
+.main-summary-price {
+    float: right;
+    color: #ed3b5a;
+}
+.main-summary-desc {
+    font-size: .22rem;
+    color: #999;
+}
+.main-detail,
+.main-position {
+    margin-top: .3rem;
+    padding: .3rem;
+    background-color: #fff;
+}
+.main-detail-title {
+    position: relative;
+    font-size: .3rem;
+    color: #68ceb7;
+}
+.main-detail-title:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: -.3rem;
+    width: .15rem;
+    height: .3rem;
+    background-color: #68ceb7;
+}
+.main-detail-desc {
+    margin-top: .3rem;
+    font-size: .22rem;
+    line-height: .4rem;
+    color: #999;
+}
+.main-position {
+    color: #999;
+}
+
+/*
+ * -- tour && goods detail page -- end --
+ */
