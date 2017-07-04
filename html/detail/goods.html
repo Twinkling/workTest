@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>goods page</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../../css/app.css">
+    <link rel="stylesheet" type="text/css" href="../../plugins/raty/lib/jquery.raty.css">
+    <script type="text/javascript">
+        (function () {
+            var Dpr = 1,
+                uAgent = window.navigator.userAgent;
+            var isIOS = uAgent.match(/iphone/i);
+            var isYIXIN = uAgent.match(/yixin/i);
+            var is2345 = uAgent.match(/Mb2345/i);
+            var ishaosou = uAgent.match(/mso_app/i);
+            var isSogou = uAgent.match(/sogoumobilebrowser/ig);
+            var isLiebao = uAgent.match(/liebaofast/i);
+            var isGnbr = uAgent.match(/GNBR/i);
+            function resizeRoot() {
+                var wWidth = (screen.width > 0) ? (window.innerWidth >= screen.width || window.innerWidth == 0) ? screen.width :
+                    window.innerWidth : window.innerWidth,
+                    wDpr, wFsize;
+                var wHeight = (screen.height > 0) ? (window.innerHeight >= screen.height || window.innerHeight == 0) ?
+                    screen.height : window.innerHeight : window.innerHeight;
+                if (window.devicePixelRatio) {
+                    wDpr = window.devicePixelRatio;
+                } else {
+                    wDpr = isIOS ? wWidth > 818 ? 3 : wWidth > 480 ? 2 : 1 : 1;
+                }
+                if (isIOS) {
+                    wWidth = screen.width;
+                    wHeight = screen.height;
+                }
+                // if(window.orientation==90||window.orientation==-90){
+                //     wWidth = wHeight;
+                // }else if((window.orientation==180||window.orientation==0)){
+                // }
+                if (wWidth > wHeight) {
+                    wWidth = wHeight;
+                }
+                wFsize = wWidth > 1080 ? 144 : wWidth / 7.5;
+                wFsize = wFsize > 32 ? wFsize : 32;
+                window.screenWidth_ = wWidth;
+                if (isYIXIN || is2345 || ishaosou || isSogou || isLiebao || isGnbr) { //YIXIN 和 2345 这里有个刚调用系统浏览器时候的bug，需要一点延迟来获取
+                    setTimeout(function () {
+                        wWidth = (screen.width > 0) ? (window.innerWidth >= screen.width || window.innerWidth == 0) ?
+                            screen.width : window.innerWidth : window.innerWidth;
+                        wHeight = (screen.height > 0) ? (window.innerHeight >= screen.height || window.innerHeight ==
+                            0) ? screen.height : window.innerHeight : window.innerHeight;
+                        wFsize = wWidth > 1080 ? 144 : wWidth / 7.5;
+                        wFsize = wFsize > 32 ? wFsize : 32;
+                        // document.getElementsByTagName('html')[0].dataset.dpr = wDpr;
+                        document.getElementsByTagName('html')[0].style.fontSize = wFsize + 'px';
+                    }, 500);
+                } else {
+                    // document.getElementsByTagName('html')[0].dataset.dpr = wDpr;
+                    document.getElementsByTagName('html')[0].style.fontSize = wFsize + 'px';
+                }
+                // alert("fz="+wFsize+";dpr="+window.devicePixelRatio+";UA="+uAgent+";width="+wWidth+";sw="+screen.width+";wiw="+window.innerWidth+";wsw="+window.screen.width+window.screen.availWidth);
+            }
+            resizeRoot();
+        })();
+    </script>
+</head>
+<body>
+    <div class="main-summary">
+        <div class="main-summary-text">
+            <div class="main-summary-name">小樱桃</div>
+            <div class="main-summary-price">￥233元</div>
+        </div>
+        <div class="main-summary-desc">
+            <p>简介简介简介简介简介简介简介</p>
+        </div>
+    </div>
+    <div class="main-detail">
+        <div class="main-detail-title"><span>商品信息</span></div>
+        <div class="main-detail-desc">小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃</div>
+    </div>
+    <div class="main-position">
+        <div class="main-position-icon"></div>
+        <span>产于福建省厦门市什么区</span>
+        <div id="position"></div>
+    </div>
+    <div class="main-detail">
+        <div class="main-detail-title"><span>商家评价</span></div>
+        <ul class="main-detail-raty">
+            <li class="raty-list-item">
+                <div class="raty-author-img"><img src="../../imgs/author.jpg" alt=""></div>
+                <div class="raty-author-desc">
+                    <div class="raty-author-name"><span>Taffy</span></div>
+                    <div class="raty-author-content">
+                        <div class="raty-content" data-score="4.5"></div>
+                        <div class="raty-content-date">2017-06-23</div>
+                    </div>
+                </div>
+            </li>
+            <li class="raty-list-item">
+                <div class="raty-author-img"><img src="../../imgs/author.jpg" alt=""></div>
+                <div class="raty-author-desc">
+                    <div class="raty-author-name"><span>Taffy</span></div>
+                    <div class="raty-author-content">
+                        <div class="raty-content" data-score="4.5"></div>
+                        <div class="raty-content-date">2017-06-23</div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <form action="">
+            <div class="raty-submit-wrap">
+                <div class="raty-submit-author"><span class="raty-submit-title">评论人:</span>黄一心</div>
+                <div class="raty-submit-count"><span class="raty-submit-title">评&nbsp;&nbsp;&nbsp;价:</span><span id="raty"></span></div>
+            </div>
+            <input type="hidden" id="score">
+            <input type="submit" class="raty-submit-button" value="提交">
+        </form>
+    </div>
+    <div class="main-full-list-item" style="margin-top: 0;">
+        <div class="main-full-center-text">
+            <span>周边推荐</span>
+        </div>
+        <ul class="new-list-items">
+            <li class="new-item-wrap">
+                <div class="new-item-img-wrap"><img src="../../imgs/find/nhc/nm.jpg" alt=""></div>
+                <div class="new-item-desc">
+                    <div class="new-item-text">
+                        <div class="new-item-name"><h1>柠檬</h1></div>
+                        <div class="new-item-price"><span>￥8元</span></div>
+                    </div>
+                    <p class="new-item-detail-desc">现摘现卖的柠檬,新鲜可见suanhwwwwww……</p>
+                </div>
+                <div class="new-item-author">
+                    <div class="new-item-author-img"><img src="../../imgs/find/nhc/author.jpg" alt=""></div>
+                    <div class="new-item-author-name">Taffy</div>
+                    <div class="new-item-collect">
+                        <div class="new-item-collect-img"><img src="../../imgs/icons/collect.png" alt=""></div>
+                        <div class="new-item-collect-count">126</div>
+                    </div>
+                </div>
+            </li>
+            <li class="new-item-wrap">
+                <div class="new-item-img-wrap"><img src="../../imgs/find/nhc/nm.jpg" alt=""></div>
+                <div class="new-item-desc">
+                    <div class="new-item-text">
+                        <div class="new-item-name"><h1>柠檬</h1></div>
+                        <div class="new-item-price"><span>￥8元</span></div>
+                    </div>
+                    <p class="new-item-detail-desc">现摘现卖的柠檬,新鲜可见suanhwwwwww……</p>
+                </div>
+                <div class="new-item-author">
+                    <div class="new-item-author-img"><img src="../../imgs/find/nhc/author.jpg" alt=""></div>
+                    <div class="new-item-author-name">Taffy</div>
+                    <div class="new-item-collect">
+                        <div class="new-item-collect-img"><img src="../../imgs/icons/collect.png" alt=""></div>
+                        <div class="new-item-collect-count">126</div>
+                    </div>
+                </div>
+            </li>
+            <li class="new-item-wrap">
+                <div class="new-item-img-wrap"><img src="../../imgs/find/nhc/nm.jpg" alt=""></div>
+                <div class="new-item-desc">
+                    <div class="new-item-text">
+                        <div class="new-item-name"><h1>柠檬</h1></div>
+                        <div class="new-item-price"><span>￥8元</span></div>
+                    </div>
+                    <p class="new-item-detail-desc">现摘现卖的柠檬,新鲜可见suanhwwwwww……</p>
+                </div>
+                <div class="new-item-author">
+                    <div class="new-item-author-img"><img src="../../imgs/find/nhc/author.jpg" alt=""></div>
+                    <div class="new-item-author-name">Taffy</div>
+                    <div class="new-item-collect">
+                        <div class="new-item-collect-img"><img src="../../imgs/icons/collect.png" alt=""></div>
+                        <div class="new-item-collect-count">126</div>
+                    </div>
+                </div>
+            </li>
+            <li class="new-item-wrap">
+                <div class="new-item-img-wrap"><img src="../../imgs/find/nhc/nm.jpg" alt=""></div>
+                <div class="new-item-desc">
+                    <div class="new-item-text">
+                        <div class="new-item-name"><h1>柠檬</h1></div>
+                        <div class="new-item-price"><span>￥8元</span></div>
+                    </div>
+                    <p class="new-item-detail-desc">现摘现卖的柠檬,新鲜可见suanhwwwwww……</p>
+                </div>
+                <div class="new-item-author">
+                    <div class="new-item-author-img"><img src="../../imgs/find/nhc/author.jpg" alt=""></div>
+                    <div class="new-item-author-name">Taffy</div>
+                    <div class="new-item-collect">
+                        <div class="new-item-collect-img"><img src="../../imgs/icons/collect.png" alt=""></div>
+                        <div class="new-item-collect-count">126</div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Krn7BFFHNSyywTpeDoCe77GGydLa81LX"></script>
+    <script type="text/javascript" src="../../js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="../../plugins/raty/lib/jquery.raty.js"></script>
+    <script type="text/javascript">
+        var map = new BMap.Map('position');
+        map.centerAndZoom("厦门", 12);
+        $.fn.raty.defaults.path = '../../plugins/raty/lib/images';
+        $('#raty').raty({
+            half: true,
+            click: function(score, evt) {
+                var floor = Math.floor(score),
+                    $scoreInp = $('#score');
+                if(score <= floor+.25) {
+                    $scoreInp.val(floor);
+                } else if(score < floor+.75) {
+                    $scoreInp.val(floor+.5);
+                } else {
+                    $scoreInp.val(floor+1);
+                }
+            }
+        });
+        $('.raty-content').raty({
+            half: true,
+            score: function() {
+                return $(this).attr('data-score');
+            },
+            readOnly: true
+        });
+    </script>
+</body>
+</html>
