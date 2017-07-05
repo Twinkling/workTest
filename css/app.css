@@ -588,14 +588,15 @@ img {
 .collect-item-desc {
     display: inline-block;
     vertical-align: top;
-}
-.collect-item-desc {
-    margin-left: .3rem;
-    width: 4.2rem;
+    height: 2.3rem;
 }
 .collect-item-img-wrap {
     width: 2.4rem;
-    height: 2.3rem;
+}
+.collect-item-desc {
+    position: relative;
+    margin-left: .3rem;
+    width: 4.2rem;
 }
 .collect-item-text {
     font-size: .3rem;
@@ -943,6 +944,9 @@ img {
     height: 100%;
     background-color: rgba(0, 0, 0, .25);
 }
+.filter-content-shadow.limit {
+    background-color: rgba(0, 0, 0, .1);
+}
 .filter-content {
     background-color: #fff;
 }
@@ -953,6 +957,9 @@ img {
     line-height: .88rem;
     font-size: .28rem;
     border-bottom: 1px solid #dcdcdc;
+}
+.filter-item:last-child {
+    border-bottom: none;
 }
 .filter-item-text {
     display: inline-block;
@@ -1058,6 +1065,85 @@ img {
 .main-content-list .main-detail-title {
     display: inline-block;
 }
+.article-title,
+.article-date,
+.article-content {
+    margin: 0 .3rem;
+}
+.article-title {
+    font-size: .3rem;
+    line-height: .9rem;
+    font-weight: bold;
+    color: #090909;
+}
+.article-date {
+    font-size: .2rem;
+    margin-bottom: .3rem;
+    color: #999;
+}
 /*
- * -- second level pages -- start --
+ * -- second level pages -- end --
+ */
+
+/*
+ * -- wechat pages -- start --
+ */
+.backend-pub-title {
+    padding: 0 .3rem;
+    background-color: #f1f1f4;
+}
+.backend-pub-text {
+    height: .7rem;
+    line-height: .7rem;
+    color: #666;
+}
+.backend-pub-filter {
+    float: right;
+    line-height: .7rem;
+    color: #00b38a;
+}
+.filter-limit-wrap {
+    position: relative;
+    float: right;
+}
+.filter-limit-wrap .filter-content {
+    margin: .15rem .15rem 0 0;
+    width: 2.4rem;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 13px 0 rgba(0, 0, 0, .35);
+}
+.filter-limit-wrap:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    right: .4rem;
+    border-top: none;
+    border-right: .15rem solid transparent;
+    border-left: .15rem solid transparent;
+    border-bottom: .3rem solid #fff;
+}
+.filter-limit-wrap .filter-item.on {
+    color: #00b38a;
+}
+.backend-collect-item-operate {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: .22rem;
+}
+.backend-collect-item-operate span {
+    position: absolute;
+    bottom: 0;
+    color: #666;
+}
+.backend-collect-delete {
+    float: right;
+    border: 1px solid;
+    font-size: .24rem;
+    color: #00bc8a;
+    padding: .1rem .2rem;
+}
+/*
+ * -- wechat pages -- end --
  */
