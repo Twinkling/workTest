@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>xxcl page</title>
+    <title>zjzt page</title>
     <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="../css/app.css">
     <script type="text/javascript">
@@ -63,6 +63,80 @@
     </script>
 </head>
 <body>
-    ;
+    <div class="main-content-top">
+        <div class="main-content-select">
+            <ul>
+                <li class="main-content-select-text on">思明区</li>
+                <li class="main-content-select-text">湖里区</li>
+                <li class="main-content-select-text">集美区</li>
+                <li class="main-content-select-text">海沧区</li>
+                <li class="main-content-select-text">翔安区</li>
+                <li class="main-content-select-text">同安区</li>
+            </ul>
+        </div>
+        <div class="main-content-item-img"><img src="../imgs/zjzt/smq.jpg" alt=""></div>
+        <div class="main-content-text">思明区</div>
+    </div>
+    <div class="main-detail">
+        <div class="main-detail-title"><span>简介</span></div>
+        <div class="main-detail-desc">思明区隶属福建省厦门市， 位于厦门市厦门岛南部，地处北纬24°26′～24°28′，东经118°03′～118 °13′之间，由厦门岛南部与鼓浪屿全岛组成，北与湖里区毗邻，东、西、南与小金门诸岛及漳州隔海相望，总面积84平方公里。</div>
+    </div>
+    <div class="main-content-list">
+        <div class="main-detail">
+            <div class="main-detail-title"><span>镇街展厅</span></div>
+            <div class="more">更多 ></div>
+        </div>
+        <ul class="market-list-wrap">
+            <li class="market-list-item-warp">
+                <div class="market-item-img-wrap"><img src="../imgs/market/nm1.jpg" alt=""></div>
+                <span class="market-item-text">街道</span>
+            </li>
+            <li class="market-list-item-warp">
+                <div class="market-item-img-wrap"><img src="../imgs/market/nm1.jpg" alt=""></div>
+                <span class="market-item-text">街道</span>
+            </li>
+            <li class="market-list-item-warp">
+                <div class="market-item-img-wrap"><img src="../imgs/market/nm1.jpg" alt=""></div>
+                <span class="market-item-text">街道</span>
+            </li>
+            <li class="market-list-item-warp">
+                <div class="market-item-img-wrap"><img src="../imgs/market/nm1.jpg" alt=""></div>
+                <span class="market-item-text">街道</span>
+            </li>
+        </ul>
+    </div>
+    <div class="main-content-list">
+        <div class="main-detail">
+            <div class="main-detail-title"><span>村务公开</span></div>
+            <div class="more">更多 ></div>
+        </div>
+        <ul class="market-list-wrap">
+            <li class="market-list-item-warp">
+                <div class="market-item-img-wrap"><img src="../imgs/market/nm1.jpg" alt=""></div>
+                <span class="market-item-text">标题</span>
+            </li>
+            <li class="market-list-item-warp">
+                <div class="market-item-img-wrap"><img src="../imgs/market/nm1.jpg" alt=""></div>
+                <span class="market-item-text">标题</span>
+            </li>
+            <li class="market-list-item-warp">
+                <div class="market-item-img-wrap"><img src="../imgs/market/nm1.jpg" alt=""></div>
+                <span class="market-item-text">标题</span>
+            </li>
+            <li class="market-list-item-warp">
+                <div class="market-item-img-wrap"><img src="../imgs/market/nm1.jpg" alt=""></div>
+                <span class="market-item-text">标题</span>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var areaSelect = $('.main-content-select-text');
+            areaSelect.click(function () {
+                $(this).addClass('on').siblings().removeClass('on');
+            });
+        });
+    </script>
 </body>
 </html>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="../css/app.css">
     <style type="text/css">
         .filter-title-text {
-            width: calc(100%/2);
+            width: calc(100%/3);
         }
     </style>
     <script type="text/javascript">
@@ -70,10 +70,41 @@
 <body>
     <div class="filter-wrap">
         <ul class="filter-title" id="filterTitle">
-            <li class="filter-title-text" data-index='0'><span>排序</span><i></i></li>
-            <li class="filter-title-text" data-index='1'><span>筛选</span><i></i></li>
+            <li class="filter-title-text" data-index='0'><span>附近</span><i></i></li>
+            <li class="filter-title-text" data-index='1'><span>排序</span><i></i></li>
+            <li class="filter-title-text" data-index='2'><span>筛选</span><i></i></li>
         </ul>
-        <div class="filter-content-shadow" id="filterShadow">            
+        <div class="filter-content-shadow" id="filterShadow">   
+            <ul class="filter-content" data-type='area'>
+                <li class="filter-item">
+                    <div class="filter-item-text" data-type="思明区">思明区</div>
+                    <div class="filter-item-checkbox"></div>
+                </li>
+                <li class="filter-item">
+                    <div class="filter-item-text" data-type="湖里区">湖里区</div>
+                    <div class="filter-item-checkbox"></div>
+                </li>
+                <li class="filter-item">
+                    <div class="filter-item-text" data-type="集美区">集美区</div>
+                    <div class="filter-item-checkbox"></div>
+                </li>
+                <li class="filter-item">
+                    <div class="filter-item-text" data-type="海沧区">海沧区</div>
+                    <div class="filter-item-checkbox"></div>
+                </li>
+                <li class="filter-item">
+                    <div class="filter-item-text" data-type="翔安区">翔安区</div>
+                    <div class="filter-item-checkbox"></div>
+                </li>
+                <li class="filter-item">
+                    <div class="filter-item-text" data-type="同安区">同安区</div>
+                    <div class="filter-item-checkbox"></div>
+                </li>
+                <li class="filter-item">
+                    <div class="filter-reset-btn">重置</div>
+                    <div class="filter-save-btn">完成</div>
+                </li>
+            </ul>         
             <ul class="filter-content" data-type='order'>
                 <li class="filter-item">
                     <div class="filter-item-text" data-type="时间">时间</div>
@@ -218,7 +249,8 @@
             });
             $filterCheckbox.click(function (e) {
                 e.stopPropagation();
-                $(this).parent().toggleClass('on');
+                var $parents = $(this).parents('ul');
+                $parents.eq(0).attr('data-type') === 'area' ? ($(this).parent().toggleClass('on').siblings().removeClass('on')) : ($(this).parent().toggleClass('on'));
             });
             $reset.click(function (e) {
                 e.stopPropagation();
@@ -228,12 +260,19 @@
                 e.stopPropagation();
                 var _this = this;
                 var datas = {
+                    area: [],
                     order: [],
                     filter: [],
                 };
                 $filterContent.each(function (index, item) {
                     var type = $(this).attr('data-type');
                     switch(type) {
+                        case 'area': 
+                            $(this).find('li.on').each(function () {
+                                var data = $(this).find('.filter-item-text').attr('data-type');
+                                datas.area.push(data);
+                            });
+                            break;
                         case 'order': 
                             $(this).find('li.on').each(function () {
                                 var data = $(this).find('.filter-item-text').attr('data-type');
