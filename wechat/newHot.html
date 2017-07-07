@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>new hot page</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../../css/app.css">
+    <link rel="stylesheet" type="text/css" href="../../plugins/raty/lib/jquery.raty.css">
+    <script type="text/javascript">
+        (function () {
+            var Dpr = 1,
+                uAgent = window.navigator.userAgent;
+            var isIOS = uAgent.match(/iphone/i);
+            var isYIXIN = uAgent.match(/yixin/i);
+            var is2345 = uAgent.match(/Mb2345/i);
+            var ishaosou = uAgent.match(/mso_app/i);
+            var isSogou = uAgent.match(/sogoumobilebrowser/ig);
+            var isLiebao = uAgent.match(/liebaofast/i);
+            var isGnbr = uAgent.match(/GNBR/i);
+            function resizeRoot() {
+                var wWidth = (screen.width > 0) ? (window.innerWidth >= screen.width || window.innerWidth == 0) ? screen.width :
+                    window.innerWidth : window.innerWidth,
+                    wDpr, wFsize;
+                var wHeight = (screen.height > 0) ? (window.innerHeight >= screen.height || window.innerHeight == 0) ?
+                    screen.height : window.innerHeight : window.innerHeight;
+                if (window.devicePixelRatio) {
+                    wDpr = window.devicePixelRatio;
+                } else {
+                    wDpr = isIOS ? wWidth > 818 ? 3 : wWidth > 480 ? 2 : 1 : 1;
+                }
+                if (isIOS) {
+                    wWidth = screen.width;
+                    wHeight = screen.height;
+                }
+                if(window.orientation==90||window.orientation==-90){
+                    wWidth = wHeight;
+                }else if((window.orientation==180||window.orientation==0)){
+                }
+                if (wWidth > wHeight) {
+                    // wWidth = wHeight;
+                }
+                wFsize = wWidth > 1080 ? 144 : wWidth / 7.5;
+                wFsize = wFsize > 32 ? wFsize : 32;
+                window.screenWidth_ = wWidth;
+                if (isYIXIN || is2345 || ishaosou || isSogou || isLiebao || isGnbr) { //YIXIN 和 2345 这里有个刚调用系统浏览器时候的bug，需要一点延迟来获取
+                    setTimeout(function () {
+                        wWidth = (screen.width > 0) ? (window.innerWidth >= screen.width || window.innerWidth == 0) ?
+                            screen.width : window.innerWidth : window.innerWidth;
+                        wHeight = (screen.height > 0) ? (window.innerHeight >= screen.height || window.innerHeight ==
+                            0) ? screen.height : window.innerHeight : window.innerHeight;
+                        wFsize = wWidth > 1080 ? 144 : wWidth / 7.5;
+                        wFsize = wFsize > 32 ? wFsize : 32;
+                        // document.getElementsByTagName('html')[0].dataset.dpr = wDpr;
+                        document.getElementsByTagName('html')[0].style.fontSize = wFsize + 'px';
+                    }, 500);
+                } else {
+                    // document.getElementsByTagName('html')[0].dataset.dpr = wDpr;
+                    document.getElementsByTagName('html')[0].style.fontSize = wFsize + 'px';
+                }
+                // alert("fz="+wFsize+";dpr="+window.devicePixelRatio+";UA="+uAgent+";width="+wWidth+";sw="+screen.width+";wiw="+window.innerWidth+";wsw="+window.screen.width+window.screen.availWidth);
+            }
+            resizeRoot();
+        })();
+    </script>
+</head>
+<body>
+    <div id="banner">
+        <div class="hd">
+            <ul class="clearfix">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="bd">
+            <ul>
+                <li><img src="../../imgs/find/banner/nm.jpg" alt=""></li>
+            </ul>
+            <ul>
+                <li><img src="../../imgs/find/banner/nm.jpg" alt=""></li>
+            </ul>
+            <ul>
+                <li><img src="../../imgs/find/banner/nm.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+    <div class="NHC" id="NHCNew">
+        <div class="hd">
+            <ul>
+                <li>网上农场</li>
+                <li>旅游景点</li>
+                <li>美食特色</li>
+                <li>民宿酒店</li>
+            </ul>
+        </div>
+        <div class="bd">
+            <!-- -->
+            <ul class="new-list-items">
+                <li class="new-item-wrap">
+                    <div class="new-item-img-wrap"><img src="../imgs/find/nhc/nm.jpg" alt=""></div>
+                    <div class="new-item-desc">
+                        <div class="new-item-text">
+                            <div class="new-item-name"><h1>柠檬</h1></div>
+                            <div class="new-item-price"><span>￥8元</span></div>
+                        </div>
+                        <p class="new-item-detail-desc">现摘现卖的柠檬,新鲜可见suanhwwwwww……</p>
+                    </div>
+                    <div class="new-item-author">
+                        <div class="new-item-author-img"><img src="../imgs/find/nhc/author.jpg" alt=""></div>
+                        <div class="new-item-author-name">Taffy</div>
+                        <div class="new-item-collect">
+                            <div class="new-item-collect-img"><img src="../imgs/icons/collect.png" alt=""></div>
+                            <div class="new-item-collect-count">126</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="new-item-wrap">
+                    <div class="new-item-img-wrap"><img src="../imgs/find/nhc/nm1.jpg" alt=""></div>
+                    <div class="new-item-desc">
+                        <div class="new-item-text">
+                            <div class="new-item-name"><h1>柠檬</h1></div>
+                            <div class="new-item-price"><span>￥8元</span></div>
+                        </div>
+                        <p class="new-item-detail-desc">现摘现卖的柠檬,新鲜可见suanhwwwwww……</p>
+                    </div>
+                    <div class="new-item-author">
+                        <div class="new-item-author-img"><img src="../imgs/find/nhc/author.jpg" alt=""></div>
+                        <div class="new-item-author-name">Taffy</div>
+                        <div class="new-item-collect">
+                            <div class="new-item-collect-img"><img src="../imgs/icons/collect.png" alt=""></div>
+                            <div class="new-item-collect-count">126</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="new-list-items">
+                <li class="new-item-wrap">
+                    <div class="new-item-img-wrap"><img src="../imgs/find/nhc/szt.jpg" alt=""></div>
+                    <div class="new-item-desc">
+                        <div class="new-item-text">
+                            <div class="new-item-name"><h1>双子塔</h1></div>
+                            <div class="new-item-price"><span>￥100元</span></div>
+                        </div>
+                        <p class="new-item-detail-desc">双子塔双子塔双子塔</p>
+                    </div>
+                    <div class="new-item-author">
+                        <div class="new-item-author-img"><img src="../imgs/find/nhc/author.jpg" alt=""></div>
+                        <div class="new-item-author-name">Taffy</div>
+                        <div class="new-item-collect">
+                            <div class="new-item-collect-img"><img src="../imgs/icons/collect.png" alt=""></div>
+                            <div class="new-item-collect-count">126</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="new-item-wrap">
+                    <div class="new-item-img-wrap"><img src="../imgs/find/nhc/gly.jpg" alt=""></div>
+                    <div class="new-item-desc">
+                        <div class="new-item-text">
+                            <div class="new-item-name"><h1>鼓浪屿</h1></div>
+                            <div class="new-item-price"><span>￥35元</span></div>
+                        </div>
+                        <p class="new-item-detail-desc">鼓浪屿鼓浪屿鼓浪屿</p>
+                    </div>
+                    <div class="new-item-author">
+                        <div class="new-item-author-img"><img src="../imgs/find/nhc/author.jpg" alt=""></div>
+                        <div class="new-item-author-name">Taffy</div>
+                        <div class="new-item-collect">
+                            <div class="new-item-collect-img"><img src="../imgs/icons/collect.png" alt=""></div>
+                            <div class="new-item-collect-count">126</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="new-list-items">
+                <li class="new-item-wrap">
+                    <div class="new-item-img-wrap"><img src="../imgs/find/nhc/jmy.jpg" alt=""></div>
+                    <div class="new-item-desc">
+                        <div class="new-item-text">
+                            <div class="new-item-name"><h1>姜母鸭</h1></div>
+                            <div class="new-item-price"><span>￥70元</span></div>
+                        </div>
+                        <p class="new-item-detail-desc">姜母鸭姜母鸭姜母鸭</p>
+                    </div>
+                    <div class="new-item-author">
+                        <div class="new-item-author-img"><img src="../imgs/find/nhc/author.jpg" alt=""></div>
+                        <div class="new-item-author-name">Taffy</div>
+                        <div class="new-item-collect">
+                            <div class="new-item-collect-img"><img src="../imgs/icons/collect.png" alt=""></div>
+                            <div class="new-item-collect-count">340</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="new-item-wrap">
+                    <div class="new-item-img-wrap"><img src="../imgs/find/nhc/zwx.jpg" alt=""></div>
+                    <div class="new-item-desc">
+                        <div class="new-item-text">
+                            <div class="new-item-name"><h1>炸五香</h1></div>
+                            <div class="new-item-price"><span>￥35元</span></div>
+                        </div>
+                        <p class="new-item-detail-desc">炸五香炸五香炸五香炸五香炸五香</p>
+                    </div>
+                    <div class="new-item-author">
+                        <div class="new-item-author-img"><img src="../imgs/find/nhc/author.jpg" alt=""></div>
+                        <div class="new-item-author-name">Taffy</div>
+                        <div class="new-item-collect">
+                            <div class="new-item-collect-img"><img src="../imgs/icons/collect.png" alt=""></div>
+                            <div class="new-item-collect-count">200</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="new-list-items">
+                <li class="new-item-wrap">
+                    <div class="new-item-img-wrap"><img src="../imgs/find/nhc/kbs.jpg" alt=""></div>
+                    <div class="new-item-desc">
+                        <div class="new-item-text">
+                            <div class="new-item-name"><h1>凯宾斯大酒店</h1></div>
+                            <div class="new-item-price"><span>￥170元</span></div>
+                        </div>
+                        <p class="new-item-detail-desc">凯宾斯凯宾斯凯宾斯凯宾斯</p>
+                    </div>
+                    <div class="new-item-author">
+                        <div class="new-item-author-img"><img src="../imgs/find/nhc/author.jpg" alt=""></div>
+                        <div class="new-item-author-name">Taffy</div>
+                        <div class="new-item-collect">
+                            <div class="new-item-collect-img"><img src="../imgs/icons/collect.png" alt=""></div>
+                            <div class="new-item-collect-count">80</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="new-item-wrap">
+                    <div class="new-item-img-wrap"><img src="../imgs/find/nhc/yh.jpg" alt=""></div>
+                    <div class="new-item-desc">
+                        <div class="new-item-text">
+                            <div class="new-item-name"><h1>厦门悦华大酒店</h1></div>
+                            <div class="new-item-price"><span>￥135元</span></div>
+                        </div>
+                        <p class="new-item-detail-desc">悦华悦华悦华悦华</p>
+                    </div>
+                    <div class="new-item-author">
+                        <div class="new-item-author-img"><img src="../imgs/find/nhc/author.jpg" alt=""></div>
+                        <div class="new-item-author-name">Taffy</div>
+                        <div class="new-item-collect">
+                            <div class="new-item-collect-img"><img src="../imgs/icons/collect.png" alt=""></div>
+                            <div class="new-item-collect-count">100</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!-- -->
+        </div>
+    </div>
+    <script type="text/javascript" src="../js/TouchSlide.1.1.source.js"></script>
+    <script type="text/javascript">
+        TouchSlide({
+            slideCell: '#banner',
+            effect: 'leftLoop',
+            autoPlay: true,
+        });
+        TouchSlide({
+            slideCell: '#NHCNew',
+            effect: 'leftLoop'
+        });
+    </script>
+</body>
+</html>

@@ -474,7 +474,7 @@ img {
     border-radius: .1rem;
 }
 #banner .bd li {
-    height: 3rem;
+    height: 4rem;
 }
 
 .new-hot-collect {
@@ -674,7 +674,7 @@ img {
  * -- tour && goods detail page -- start --
  */
 .main-summary {
-    padding: .3rem;
+    padding: .15rem .3rem .3rem;
     background-color: #fff;
 }
 .main-summary-text {
@@ -690,8 +690,14 @@ img {
     color: #ed3b5a;
 }
 .main-summary-desc {
+    line-height: .32rem;
     font-size: .22rem;
     color: #999;
+}
+.collect-cancel-btn {
+    float: right;
+    color: #00b38a;
+    font-size: .24rem;
 }
 .main-detail,
 .main-position {
@@ -786,6 +792,7 @@ img {
     border: none;
     border-radius: 0;
     background-color: #68ceb7;
+    font-size: .22rem;
     color: #fff;
 }
 /*
@@ -999,7 +1006,7 @@ img {
 .main-content-title {
     font-size: 0;
     padding: 0 .3rem;
-    border: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
 }
 .main-content-title-text {
     display: inline-block;

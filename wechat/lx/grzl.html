@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>个人资料</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<link href="css/public.css" rel="stylesheet" type="text/css">
+<script>        
+    (function (doc, win) {    
+        var docEl = doc.documentElement,    
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',    
+        recalc = function () {    
+	        var clientWidth = docEl.clientWidth;    
+	        if (!clientWidth) return;    
+	        docEl.style.fontSize = 20 * (clientWidth / 750) + 'px';    
+	    };    
+	    if (!doc.addEventListener) return;    
+	    win.addEventListener(resizeEvt, recalc, false);    
+	    doc.addEventListener('DOMContentLoaded', recalc, false);    
+    })(document, window);    
+</script>
+</head>
+<body>
+<div class="my">   
+  <!-- 这里是页面内容区 -->
+    
+  <div class="personal">
+    <ul class="clearfix"> 
+      <li>
+      	<a href="#">
+      	<div class="wxzh clearfix">
+      		<div class="fl_l"><span class="gezl_img"><img src="images/head_pic01.jpg"></span></div>
+      		<span class="fl_l fl_r_color xgtx">修改头像</span>
+      		<div class="clear"></div>
+		      </div>
+      	</a>
+      </li>
+      <li>
+      	<a href="mgchtj.html">
+      	<div class="wxzh clearfix">
+      		<div class="fl_l"><span>用户名</span></div>
+      		<span class="fl_l fl_r_w1 fl_r_color">Taffy</span>
+      		<div class="clear"></div>
+		    </div>
+      	</a>
+      </li>
+      <li>
+      	<a href="mgchtj.html">
+      	<div class="wxzh clearfix">
+      		<div class="fl_l"><span>性别</span></div>
+      		<span class="fl_l fl_r_w1 fl_r_color">女</span>
+      		<div class="clear"></div>
+		    </div>
+      	</a>
+      </li>
+      <li>
+      	<a href="mgchtj.html">
+      	<div class="wxzh clearfix">
+      		<div class="fl_l"><span>身份证号码</span></div>
+      		<span class="fl_l fl_r_w1 fl_r_color">129383837193728392</span>
+      		<div class="clear"></div>
+		    </div>
+      	</a>
+      </li>
+      <li class="li_bottom">
+      	<a href="mgchtj.html">
+      	<div class="wxzh clearfix">
+      		<div class="fl_l"><span>手机号码</span></div>
+      		<span class="fl_l fl_r_w1 fl_r_color">12938383719</span>
+      		<div class="clear"></div>
+		    </div>
+      	</a>
+      </li>
+    </ul>
+
+    <ul class="clearfix"> 
+      <li>
+      	<a href="mgchtj.html">
+      	<div class="wxzh clearfix">
+      		<div class="fl_l"><i class="ii07"></i><span>微信账号</span></div>
+      		<span class="fl_r fl_r_w">Taffy</span>
+      		<div class="clear"></div>
+		    </div>
+      	</a>
+      </li>
+      <li>
+      	<a href="mgchtj.html">
+      	<div class="wxzh clearfix">
+      		<div class="fl_l"><i class="ii08"></i><span>QQ账号</span></div>
+      		<span class="fl_r fl_r_w fl_r_color">未绑定</span>
+      		<div class="clear"></div>
+		    </div>
+      	</a>
+      </li>
+      <li class="li_bottom">
+      	<a href="mgchtj.html">
+      	<div class="wxzh clearfix">
+      		<div class="fl_l"><i class="ii09"></i><span>微博账号</span></div>
+      		<span class="fl_r fl_r_w fl_r_color">未绑定</span>
+      		<div class="clear"></div>
+		    </div>
+      	</a>
+      </li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

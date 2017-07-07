@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>我的</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<link href="css/public.css" rel="stylesheet" type="text/css">
+<script>        
+    (function (doc, win) {    
+        var docEl = doc.documentElement,    
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',    
+        recalc = function () {    
+	        var clientWidth = docEl.clientWidth;    
+	        if (!clientWidth) return;    
+	        docEl.style.fontSize = 20 * (clientWidth / 750) + 'px';    
+	    };    
+	    if (!doc.addEventListener) return;    
+	    win.addEventListener(resizeEvt, recalc, false);    
+	    doc.addEventListener('DOMContentLoaded', recalc, false);    
+    })(document, window);    
+</script>
+</head>
+<body>
+<div class="my">   
+  <!-- 这里是页面内容区 -->
+  <div class="my_head">
+  	<a href="grzl.html">
+	    <div class="my_head_pic"><img src="images/head_pic01.jpg"></div>
+	    <div class="my_head_i">
+	      <h1>苏黎世 </h1>
+	      <div class="my_head_account">
+	      	<div class="account_box">
+	      		<p style="float: left;">账号：<span>vzi128374</span></p>
+	      		<span class="fl_r">完善资料</span>
+	      		<div class="clear"></div>
+	      	</div>
+	      	<div class="account_box">
+	      		<p style="float: left;">类型：<span>合作社</span></p>
+	      		<span class="fl_r">完善度30%</span>
+	      		<div class="clear"></div>
+	      	</div>	      	
+	      </div>    
+	    </div>
+	</a>
+  </div>   
+  <div class="release">
+    <ul class="clearfix"> 
+      <li><a href="#"><i class="ii01"></i>我的发布</a></li>
+      <li><a href="wxq.html"><i class="ii02"></i>微信墙</a></li>
+      <li><a href="#"><i class="ii03"></i>我的收藏</a></li>
+      <li class="li_bottom"><a href="#"><i class="ii04"></i>市场行情</a></li>
+    </ul>
+    <ul class="clearfix"> 
+      <li><a href="mgch.html"><i class="ii05"></i>敏感词汇</a></li>
+      <li class="li_bottom"><a href="set.html"><i class="ii06"></i>设置</a></li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

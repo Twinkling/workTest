@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>market detail page</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../../css/app.css">
+    <script type="text/javascript">
+        (function () {
+            var Dpr = 1,
+                uAgent = window.navigator.userAgent;
+            var isIOS = uAgent.match(/iphone/i);
+            var isYIXIN = uAgent.match(/yixin/i);
+            var is2345 = uAgent.match(/Mb2345/i);
+            var ishaosou = uAgent.match(/mso_app/i);
+            var isSogou = uAgent.match(/sogoumobilebrowser/ig);
+            var isLiebao = uAgent.match(/liebaofast/i);
+            var isGnbr = uAgent.match(/GNBR/i);
+            function resizeRoot() {
+                var wWidth = (screen.width > 0) ? (window.innerWidth >= screen.width || window.innerWidth == 0) ? screen.width :
+                    window.innerWidth : window.innerWidth,
+                    wDpr, wFsize;
+                var wHeight = (screen.height > 0) ? (window.innerHeight >= screen.height || window.innerHeight == 0) ?
+                    screen.height : window.innerHeight : window.innerHeight;
+                if (window.devicePixelRatio) {
+                    wDpr = window.devicePixelRatio;
+                } else {
+                    wDpr = isIOS ? wWidth > 818 ? 3 : wWidth > 480 ? 2 : 1 : 1;
+                }
+                if (isIOS) {
+                    wWidth = screen.width;
+                    wHeight = screen.height;
+                }
+                if(window.orientation==90||window.orientation==-90){
+                    wWidth = wHeight;
+                }else if((window.orientation==180||window.orientation==0)){
+                }
+                if (wWidth > wHeight) {
+                    // wWidth = wHeight;
+                }
+                wFsize = wWidth > 1080 ? 144 : wWidth / 7.5;
+                wFsize = wFsize > 32 ? wFsize : 32;
+                window.screenWidth_ = wWidth;
+                if (isYIXIN || is2345 || ishaosou || isSogou || isLiebao || isGnbr) { //YIXIN 和 2345 这里有个刚调用系统浏览器时候的bug，需要一点延迟来获取
+                    setTimeout(function () {
+                        wWidth = (screen.width > 0) ? (window.innerWidth >= screen.width || window.innerWidth == 0) ?
+                            screen.width : window.innerWidth : window.innerWidth;
+                        wHeight = (screen.height > 0) ? (window.innerHeight >= screen.height || window.innerHeight ==
+                            0) ? screen.height : window.innerHeight : window.innerHeight;
+                        wFsize = wWidth > 1080 ? 144 : wWidth / 7.5;
+                        wFsize = wFsize > 32 ? wFsize : 32;
+                        // document.getElementsByTagName('html')[0].dataset.dpr = wDpr;
+                        document.getElementsByTagName('html')[0].style.fontSize = wFsize + 'px';
+                    }, 500);
+                } else {
+                    // document.getElementsByTagName('html')[0].dataset.dpr = wDpr;
+                    document.getElementsByTagName('html')[0].style.fontSize = wFsize + 'px';
+                }
+                // alert("fz="+wFsize+";dpr="+window.devicePixelRatio+";UA="+uAgent+";width="+wWidth+";sw="+screen.width+";wiw="+window.innerWidth+";wsw="+window.screen.width+window.screen.availWidth);
+            }
+            resizeRoot();
+        })();
+    </script>
+</head>
+<body>
+    <div class="search-area-wrap">
+        <form action="" onsubmit="return false;">
+            <span class="search-area-title" style="color: #00b38a;">查询范围</span>
+            <div class="mobile-select-style">
+                <select name="" id="" class="search-area-date">
+                    <option value="">一个月</option>
+                    <option value="">三个月</option>
+                    <option value="">半年</option>
+                    <option value="">一年 </option>
+                </select>
+            </div>
+            <div class="mobile-select-style">
+                <select name="" id="" class="search-area-date">
+                    <option value="">2017-6-21</option>
+                    <option value="">2017-6-22</option>
+                    <option value="">2017-6-23</option>
+                    <option value="">2017-6-24</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="market-charts">
+        <div id="echart" class="market-charts-item"></div>
+        <div class="market-charts-text">来自厦门农产品有限公司中埔水产交易批发市场</div>
+    </div>
+    <div class="market-charts">
+        <div id="echart" class="market-charts-item"></div>
+        <div class="market-charts-text">来自厦门农产品有限公司中埔水产交易批发市场</div>
+    </div>
+    <div class="market-charts">
+        <div id="echart" class="market-charts-item"></div>
+        <div class="market-charts-text">来自厦门农产品有限公司中埔水产交易批发市场</div>
+    </div>
+    <script type="text/javascript" src="../../plugins/ECharts/echarts.min.js"></script>
+    <script type="text/javascript">
+        var opt = {
+            title: {
+                text: 'market',
+                left: 'center'
+            },
+            tooltip: {
+              trigger: 'axis'
+            },
+            xAxis:[{
+                data: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+            }],
+            yAxis: {},
+            visualMap: {
+                show: false,
+                min: 0,
+                max: 10,
+                dimension: 0,
+                inRange: {
+                    color: ['#f9d873', '#ffb98d', '#69bbbb', '#f5898b', '#ef5055']
+                }
+            },
+            series: [{
+                type: 'line'
+                ,name: '售价'
+                ,lineStyle: {
+                  normal: {
+                    color: '#888'
+                  }
+                }
+                ,areaStyle: {normal: {}}
+                ,data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            }]
+        };
+        var marketItems = document.getElementsByClassName('market-charts-item');
+        for(var i = 0,j = marketItems.length; i < j; i ++) {
+            var echart = echarts.init(marketItems[i]);
+            echart.setOption(opt);
+        }
+    </script>
+</body>
+</html>

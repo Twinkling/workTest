@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nearly page</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../css/app.css">
+    <script type="text/javascript">
+        (function () {
+            var Dpr = 1,
+                uAgent = window.navigator.userAgent;
+            var isIOS = uAgent.match(/iphone/i);
+            var isYIXIN = uAgent.match(/yixin/i);
+            var is2345 = uAgent.match(/Mb2345/i);
+            var ishaosou = uAgent.match(/mso_app/i);
+            var isSogou = uAgent.match(/sogoumobilebrowser/ig);
+            var isLiebao = uAgent.match(/liebaofast/i);
+            var isGnbr = uAgent.match(/GNBR/i);
+            function resizeRoot() {
+                var wWidth = (screen.width > 0) ? (window.innerWidth >= screen.width || window.innerWidth == 0) ? screen.width :
+                    window.innerWidth : window.innerWidth,
+                    wDpr, wFsize;
+                var wHeight = (screen.height > 0) ? (window.innerHeight >= screen.height || window.innerHeight == 0) ?
+                    screen.height : window.innerHeight : window.innerHeight;
+                if (window.devicePixelRatio) {
+                    wDpr = window.devicePixelRatio;
+                } else {
+                    wDpr = isIOS ? wWidth > 818 ? 3 : wWidth > 480 ? 2 : 1 : 1;
+                }
+                if (isIOS) {
+                    wWidth = screen.width;
+                    wHeight = screen.height;
+                }
+                if(window.orientation==90||window.orientation==-90){
+                    wWidth = wHeight;
+                }else if((window.orientation==180||window.orientation==0)){
+                }
+                if (wWidth > wHeight) {
+                    // wWidth = wHeight;
+                }
+                wFsize = wWidth > 1080 ? 144 : wWidth / 7.5;
+                wFsize = wFsize > 32 ? wFsize : 32;
+                window.screenWidth_ = wWidth;
+                if (isYIXIN || is2345 || ishaosou || isSogou || isLiebao || isGnbr) { //YIXIN 和 2345 这里有个刚调用系统浏览器时候的bug，需要一点延迟来获取
+                    setTimeout(function () {
+                        wWidth = (screen.width > 0) ? (window.innerWidth >= screen.width || window.innerWidth == 0) ?
+                            screen.width : window.innerWidth : window.innerWidth;
+                        wHeight = (screen.height > 0) ? (window.innerHeight >= screen.height || window.innerHeight ==
+                            0) ? screen.height : window.innerHeight : window.innerHeight;
+                        wFsize = wWidth > 1080 ? 144 : wWidth / 7.5;
+                        wFsize = wFsize > 32 ? wFsize : 32;
+                        // document.getElementsByTagName('html')[0].dataset.dpr = wDpr;
+                        document.getElementsByTagName('html')[0].style.fontSize = wFsize + 'px';
+                    }, 500);
+                } else {
+                    // document.getElementsByTagName('html')[0].dataset.dpr = wDpr;
+                    document.getElementsByTagName('html')[0].style.fontSize = wFsize + 'px';
+                }
+                // alert("fz="+wFsize+";dpr="+window.devicePixelRatio+";UA="+uAgent+";width="+wWidth+";sw="+screen.width+";wiw="+window.innerWidth+";wsw="+window.screen.width+window.screen.availWidth);
+            }
+            resizeRoot();
+        })();
+    </script>
+    <style type="text/css">
+        .main-content-title-text {
+            width: calc(100%/5);
+        }
+    </style>
+</head>
+<body>
+    <!-- <button id="add">定位</button> -->
+    <ul class="main-content-title">
+        <li class="main-content-title-text on">全部</li>
+        <li class="main-content-title-text">农产品</li>
+        <li class="main-content-title-text">景点</li>
+        <li class="main-content-title-text">美食</li>
+        <li class="main-content-title-text">民宿</li>
+    </ul>
+    <div class="main-full-list-item" style="background-color: #fff;margin-top: 0;">
+        <div class="title">
+            <h1>热门推荐</h1>
+        </div>
+        <div class="main-full-wrap clearfix" id="iSliderWrap">
+            <!-- -->
+            <div class="full-item-wrap">
+                <div class="full-item-img-wrap"><img src="../imgs/nearly/szt.jpg" alt=""></div>
+                <div class="full-item-text-wrap clearfix">
+                    <div class="full-item-name"><span>双子塔</span></div>
+                    <div class="full-item-distance"><span>距0.8公里</span></div>
+                </div>
+            </div>
+            <div class="full-item-wrap">
+                <div class="full-item-img-wrap"><img src="../imgs/nearly/smq.jpg" alt=""></div>
+                <div class="full-item-text-wrap clearfix">
+                    <div class="full-item-name"><span>思明区</span></div>
+                    <div class="full-item-distance"><span>距0.8公里</span></div>
+                </div>
+            </div><div class="full-item-wrap">
+                <div class="full-item-img-wrap"><img src="../imgs/nearly/gly.jpg" alt=""></div>
+                <div class="full-item-text-wrap clearfix">
+                    <div class="full-item-name"><span>鼓浪屿</span></div>
+                    <div class="full-item-distance"><span>距0.8公里</span></div>
+                </div>
+            </div>
+            <!-- -->
+        </div>
+    </div>
+    <div class="other-items" id="otherItems">
+        <div class="hd">
+            <ul>
+                <li><span>距离最近</span></li>
+                <li><span>热门排行</span></li>
+            </ul>
+        </div>
+        <div class="bd">
+            <ul>
+                <li>
+                    <div class="other-item-img-wrap"><img src="../imgs/nearly/cherry.jpg" alt=""></div>
+                    <div class="other-item-desc">
+                        <div class="other-item-title clearfix">
+                            <div class="other-item-name">名称名称名称</div>
+                            <div class="other-item-price">￥233元</div>
+                        </div>
+                        <p class="other-item-detail-desc">000000评论</p>
+                        <p class="other-item-detail-desc">距离0.1公里，靠近厦大</p>
+                        <div class="go-there"><div class="go-there-img-wrap"><img src="../imgs/icons/gothere.png" alt=""></div><span>到这儿去</span></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="other-item-img-wrap"><img src="../imgs/nearly/cherry.jpg" alt=""></div>
+                    <div class="other-item-desc">
+                        <div class="other-item-title clearfix">
+                            <div class="other-item-name">名称名称名称</div>
+                            <div class="other-item-price">￥233元</div>
+                        </div>
+                        <p class="other-item-detail-desc">000000评论</p>
+                        <p class="other-item-detail-desc">距离0.1公里，靠近厦大</p>
+                        <div class="go-there"><div class="go-there-img-wrap"><img src="../imgs/icons/gothere.png" alt=""></div><span>到这儿去</span></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="other-item-img-wrap"><img src="../imgs/nearly/cherry.jpg" alt=""></div>
+                    <div class="other-item-desc">
+                        <div class="other-item-title clearfix">
+                            <div class="other-item-name">名称名称名称</div>
+                            <div class="other-item-price">￥233元</div>
+                        </div>
+                        <p class="other-item-detail-desc">000000评论</p>
+                        <p class="other-item-detail-desc">距离0.1公里，靠近厦大</p>
+                        <div class="go-there"><div class="go-there-img-wrap"><img src="../imgs/icons/gothere.png" alt=""></div><span>到这儿去</span></div>
+                    </div>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <div class="other-item-img-wrap"><img src="../imgs/nearly/cherry.jpg" alt=""></div>
+                    <div class="other-item-desc">
+                        <div class="other-item-title clearfix">
+                            <div class="other-item-name">名称名称名称</div>
+                            <div class="other-item-price">￥233元</div>
+                        </div>
+                        <p class="other-item-detail-desc">000000评论</p>
+                        <p class="other-item-detail-desc">距离0.1公里，靠近厦大</p>
+                        <div class="go-there"><div class="go-there-img-wrap"><img src="../imgs/icons/gothere.png" alt=""></div><span>到这儿去</span></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="other-item-img-wrap"><img src="../imgs/nearly/cherry.jpg" alt=""></div>
+                    <div class="other-item-desc">
+                        <div class="other-item-title clearfix">
+                            <div class="other-item-name">名称名称名称</div>
+                            <div class="other-item-price">￥233元</div>
+                        </div>
+                        <p class="other-item-detail-desc">000000评论</p>
+                        <p class="other-item-detail-desc">距离0.1公里，靠近厦大</p>
+                        <div class="go-there"><div class="go-there-img-wrap"><img src="../imgs/icons/gothere.png" alt=""></div><span>到这儿去</span></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="other-item-img-wrap"><img src="../imgs/nearly/cherry.jpg" alt=""></div>
+                    <div class="other-item-desc">
+                        <div class="other-item-title clearfix">
+                            <div class="other-item-name">名称名称名称</div>
+                            <div class="other-item-price">￥233元</div>
+                        </div>
+                        <p class="other-item-detail-desc">000000评论</p>
+                        <p class="other-item-detail-desc">距离0.1公里，靠近厦大</p>
+                        <div class="go-there"><div class="go-there-img-wrap"><img src="../imgs/icons/gothere.png" alt=""></div><span>到这儿去</span></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="../js/TouchSlide.1.1.source.js"></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript">
+        TouchSlide({
+            slideCell: '#otherItems',
+        });
+        $('.main-content-title-text').click(function () {
+            $(this).addClass('on').siblings().removeClass('on');
+        });
+        /*
+        var add = document.getElementById('add');
+        add.onclick = function () {
+            wx.openLocation({
+                latitude: 39.915, // 纬度，浮点数，范围为90 ~ -90
+                longitude: 116.404, // 经度，浮点数，范围为180 ~ -180。
+                name: '北京', // 位置名
+                address: '', // 地址详情说明
+                scale: 1, // 地图缩放级别,整形值,范围从1~28。默认为最大
+                infoUrl: '' // 在查看位置界面底部显示的超链接,可点击跳转
+            });
+            alert('cc');
+        }
+        */
+    </script>
+</body>
+</html>

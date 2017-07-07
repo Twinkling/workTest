@@ -32,12 +32,12 @@
                     wWidth = screen.width;
                     wHeight = screen.height;
                 }
-                // if(window.orientation==90||window.orientation==-90){
-                //     wWidth = wHeight;
-                // }else if((window.orientation==180||window.orientation==0)){
-                // }
-                if (wWidth > wHeight) {
+                if(window.orientation==90||window.orientation==-90){
                     wWidth = wHeight;
+                }else if((window.orientation==180||window.orientation==0)){
+                }
+                if (wWidth > wHeight) {
+                    // wWidth = wHeight;
                 }
                 wFsize = wWidth > 1080 ? 144 : wWidth / 7.5;
                 wFsize = wFsize > 32 ? wFsize : 32;
@@ -64,6 +64,26 @@
     </script>
 </head>
 <body>
+    <div id="banner">
+        <div class="hd">
+            <ul class="clearfix">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="bd">
+            <ul>
+                <li><img src="../../imgs/find/banner/nm.jpg" alt=""></li>
+            </ul>
+            <ul>
+                <li><img src="../../imgs/find/banner/nm.jpg" alt=""></li>
+            </ul>
+            <ul>
+                <li><img src="../../imgs/find/banner/nm.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
     <div class="main-summary">
         <div class="main-summary-text">
             <div class="main-summary-name">小樱桃</div>
@@ -199,31 +219,39 @@
 
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Krn7BFFHNSyywTpeDoCe77GGydLa81LX"></script>
     <script type="text/javascript" src="../../js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="../../js/TouchSlide.1.1.source.js"></script>
     <script type="text/javascript" src="../../plugins/raty/lib/jquery.raty.js"></script>
     <script type="text/javascript">
-        var map = new BMap.Map('position');
-        map.centerAndZoom("厦门", 12);
-        $.fn.raty.defaults.path = '../../plugins/raty/lib/images';
-        $('#raty').raty({
-            half: true,
-            click: function(score, evt) {
-                var floor = Math.floor(score),
-                    $scoreInp = $('#score');
-                if(score <= floor+.25) {
-                    $scoreInp.val(floor);
-                } else if(score < floor+.75) {
-                    $scoreInp.val(floor+.5);
-                } else {
-                    $scoreInp.val(floor+1);
+        $(function () {            
+            var map = new BMap.Map('position');
+            map.centerAndZoom("厦门", 12);
+            TouchSlide({
+                slideCell: '#banner',
+                effect: 'leftLoop',
+                autoPlay: true,
+            });
+            $.fn.raty.defaults.path = '../../plugins/raty/lib/images';
+            $('#raty').raty({
+                half: true,
+                click: function(score, evt) {
+                    var floor = Math.floor(score),
+                        $scoreInp = $('#score');
+                    if(score <= floor+.25) {
+                        $scoreInp.val(floor);
+                    } else if(score < floor+.75) {
+                        $scoreInp.val(floor+.5);
+                    } else {
+                        $scoreInp.val(floor+1);
+                    }
                 }
-            }
-        });
-        $('.raty-content').raty({
-            half: true,
-            score: function() {
-                return $(this).attr('data-score');
-            },
-            readOnly: true
+            });
+            $('.raty-content').raty({
+                half: true,
+                score: function() {
+                    return $(this).attr('data-score');
+                },
+                readOnly: true
+            });
         });
     </script>
 </body>

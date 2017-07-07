@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>敏感词汇</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<link href="css/public.css" rel="stylesheet" type="text/css">
+
+<script>        
+    (function (doc, win) {    
+        var docEl = doc.documentElement,    
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',    
+        recalc = function () {    
+	        var clientWidth = docEl.clientWidth;    
+	        if (!clientWidth) return;    
+	        docEl.style.fontSize = 20 * (clientWidth / 750) + 'px';    
+	    };    
+	    if (!doc.addEventListener) return;    
+	    win.addEventListener(resizeEvt, recalc, false);    
+	    doc.addEventListener('DOMContentLoaded', recalc, false);    
+    })(document, window);    
+</script>
+</head>
+<body>
+<div class="my">   
+  <!-- 这里是页面内容区 -->
+  <ul class="vocabulary_ul">
+    <li class="vocabulary_li clearfix">
+      <div class="vocabulary_div">
+        <div class="vocabulary_left fl_l1">全部词汇</div>
+        <div class="vocabulary_right fl_r">
+          <a href="mgchtj.html" class="add_color" >添加</a>
+          <a href="#" class="del_color">删除</a>
+        </div>
+      </div>
+    </li>
+    <li class="vocabulary_li clearfix">
+      <form action="" method="get" class="vocabulary_div">
+        <label><input class="checkbox_fx" name="vocabulary" type="checkbox" value="" />反共</label>
+        <div class="vocabulary_right fl_r">
+          2017-6-1
+        </div>
+      </form>
+    </li>
+  </ul>
+</div>
+
+</body>
+</html>

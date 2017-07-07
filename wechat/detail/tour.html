@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>goods page</title>
+    <title>tour page</title>
     <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="../../css/app.css">
-    <link rel="stylesheet" type="text/css" href="../../plugins/raty/lib/jquery.raty.css">
     <script type="text/javascript">
         (function () {
             var Dpr = 1,
@@ -32,12 +31,12 @@
                     wWidth = screen.width;
                     wHeight = screen.height;
                 }
-                // if(window.orientation==90||window.orientation==-90){
-                //     wWidth = wHeight;
-                // }else if((window.orientation==180||window.orientation==0)){
-                // }
-                if (wWidth > wHeight) {
+                if(window.orientation==90||window.orientation==-90){
                     wWidth = wHeight;
+                }else if((window.orientation==180||window.orientation==0)){
+                }
+                if (wWidth > wHeight) {
+                    // wWidth = wHeight;
                 }
                 wFsize = wWidth > 1080 ? 144 : wWidth / 7.5;
                 wFsize = wFsize > 32 ? wFsize : 32;
@@ -64,58 +63,44 @@
     </script>
 </head>
 <body>
+    <div id="banner">
+        <div class="hd">
+            <ul class="clearfix">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="bd">
+            <ul>
+                <li><img src="../../imgs/find/banner/nm.jpg" alt=""></li>
+            </ul>
+            <ul>
+                <li><img src="../../imgs/find/banner/nm.jpg" alt=""></li>
+            </ul>
+            <ul>
+                <li><img src="../../imgs/find/banner/nm.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
     <div class="main-summary">
         <div class="main-summary-text">
-            <div class="main-summary-name">小樱桃</div>
-            <div class="main-summary-price">￥233元</div>
+            <div class="main-summary-name">双子塔</div>
+            <div class="main-summary-price">￥100元</div>
         </div>
         <div class="main-summary-desc">
-            <p class="clearfix">类别:水果<span class="collect-cancel-btn">收藏</span></p>
-            <p>数量:1000</p>
+            <p class="clearfix"><span class="collect-cancel-btn">收藏</span></p>
             <p>简介简介简介简介简介简介简介</p>
         </div>
     </div>
     <div class="main-detail">
         <div class="main-detail-title"><span>商品信息</span></div>
-        <div class="main-detail-desc">小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃小樱桃</div>
+        <div class="main-detail-desc">厦门双子塔系厦门标志性城市景观之一，厦门双子塔是两个独立的塔楼并由裙房相连，独立塔楼外形像两个巨大的帆船，又名双峰大厦。</div>
     </div>
     <div class="main-position">
         <div class="main-position-icon"></div>
         <span>产于福建省厦门市什么区</span>
         <div id="position"></div>
-    </div>
-    <div class="main-detail">
-        <div class="main-detail-title"><span>商家评价</span></div>
-        <ul class="main-detail-raty">
-            <li class="raty-list-item">
-                <div class="raty-author-img"><img src="../../imgs/author.jpg" alt=""></div>
-                <div class="raty-author-desc">
-                    <div class="raty-author-name"><span>Taffy</span></div>
-                    <div class="raty-author-content">
-                        <div class="raty-content" data-score="4.5"></div>
-                        <div class="raty-content-date">2017-06-23</div>
-                    </div>
-                </div>
-            </li>
-            <li class="raty-list-item">
-                <div class="raty-author-img"><img src="../../imgs/author.jpg" alt=""></div>
-                <div class="raty-author-desc">
-                    <div class="raty-author-name"><span>Taffy</span></div>
-                    <div class="raty-author-content">
-                        <div class="raty-content" data-score="4.5"></div>
-                        <div class="raty-content-date">2017-06-23</div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-        <form action="">
-            <div class="raty-submit-wrap">
-                <div class="raty-submit-author"><span class="raty-submit-title">评论人:</span>黄一心</div>
-                <div class="raty-submit-count"><span class="raty-submit-title">评&nbsp;&nbsp;&nbsp;价:</span><span id="raty"></span></div>
-            </div>
-            <input type="hidden" id="score">
-            <input type="submit" class="raty-submit-button" value="提交">
-        </form>
     </div>
     <div class="main-full-list-item" style="margin-top: 0;">
         <div class="main-full-center-text">
@@ -198,32 +183,14 @@
     </div>
 
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Krn7BFFHNSyywTpeDoCe77GGydLa81LX"></script>
-    <script type="text/javascript" src="../../js/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" src="../../plugins/raty/lib/jquery.raty.js"></script>
+    <script type="text/javascript" src="../../js/TouchSlide.1.1.source.js"></script>
     <script type="text/javascript">
         var map = new BMap.Map('position');
         map.centerAndZoom("厦门", 12);
-        $.fn.raty.defaults.path = '../../plugins/raty/lib/images';
-        $('#raty').raty({
-            half: true,
-            click: function(score, evt) {
-                var floor = Math.floor(score),
-                    $scoreInp = $('#score');
-                if(score <= floor+.25) {
-                    $scoreInp.val(floor);
-                } else if(score < floor+.75) {
-                    $scoreInp.val(floor+.5);
-                } else {
-                    $scoreInp.val(floor+1);
-                }
-            }
-        });
-        $('.raty-content').raty({
-            half: true,
-            score: function() {
-                return $(this).attr('data-score');
-            },
-            readOnly: true
+        TouchSlide({
+            slideCell: '#banner',
+            effect: 'leftLoop',
+            autoPlay: true,
         });
     </script>
 </body>
