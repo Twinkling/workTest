@@ -1,0 +1,187 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@charset "utf-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, main {
+    display: block;
+}
+body {
+    line-height: 1; 
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+input[type='submit'],
+input[type='reset'],
+input[type='button'],
+input[type='text'],
+input[type='search'] {
+    -webkit-appearance: none;
+            appearance: none;
+}
+select {
+    -webkit-appearance: none;
+            appearance: none;
+}
+a {
+    text-decoration: none;
+}
+textarea {
+    resize: none;
+}
+
+/* 
+ -- claer float --
+ -- 清楚浮动 --
+ */
+.clearfix:after {
+    content: " "; 
+    display: block; 
+    height: 0; 
+    overflow: hidden;
+    visibility: hidden; 
+    clear: both; }
+.clearfix { 
+    *zoom: 1; 
+}
+body {
+    width: 7.5rem;
+    /*max-width: 1080px;*/
+    margin: 0 auto;
+    font-size: .28rem;
+    background-color: #f9f9f9;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+img {
+    width: 100%;
+    /*max-height: 100%;*/
+    height: 100%;
+}
+
+.wechat-wall-wrap {
+    position: relative;
+    width: 100%;
+}
+.wechat-wall-img-wrap {
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+}
+.wechat-wall-barrage-wrap {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /*height: .88rem;*/
+    /*font-size: .28rem;*/
+    background-color: rgba(9, 9, 9, .6);
+}
+.wechat-wall-barrage-content {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: calc(100% - 62px);
+}
+.barrage-content-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.wechat-wall-barrage-form {
+    margin: 16px 0 16px 30px;
+}
+.wechat-wall-barrage-form input {
+    display: block;
+    border: none;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    padding-left: 20px;
+    width: calc(100% - 60px);
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    color: #dcdcdc;
+    background-color: rgba(255, 255, 255, .2);
+}
+
+@media screen and (max-width: 960px) {
+    .wechat-wall-barrage-form {
+        margin: 8px 0 8px 15px;
+    }
+    .wechat-wall-barrage-form input {
+        padding-left: 15px;
+        font-size: 17px;
+    }
+    .wechat-wall-barrage-content {
+        height: calc(100% - 46px);
+    }
+}
+
+.rotate90 {
+    position: fixed;
+    -webkit-transform-origin: 50% 50%;
+       -moz-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-transform: rotate(90deg);
+       -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+    /*background-color: yellow !important;*/
+}
+.rotate0 {
+    position: fixed;
+    -webkit-transform-origin: 50% 50%;
+       -moz-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-transform: rotate(0deg);
+       -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+    /*background-color: #00b38a;*/
+}       
