@@ -129,6 +129,30 @@ img {
     position: relative;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+}
+
+.barrage-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 0;
+    white-space: nowrap;
+}
+.barrage-item-img-wrap {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+    border: none;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.barrage-item-text {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 20px;
 }
 .wechat-wall-barrage-form {
     margin: 16px 0 16px 30px;
@@ -146,6 +170,166 @@ img {
     font-size: 20px;
     color: #dcdcdc;
     background-color: rgba(255, 255, 255, .2);
+}
+.wechat-wall-operate-wrap {
+    padding: .3rem;
+    background-color: #fff;
+    font-size: .28rem;
+    color: #090909;
+}
+*[class^='wechat-wall-lottery'],
+*[class^='wechat-wall-vote'] {
+    display: inline-block;
+    vertical-align: middle;
+}
+.wechat-wall-vote-wrap {
+    margin-left: .3rem;
+}
+.wechat-wall-lottery-icon,
+.wechat-wall-vote-icon {
+    width: .42rem;
+    height: .42rem;
+    background: url('../imgs/icon.png') no-repeat -1rem 0;
+    background-size: 1.9rem .4rem;
+}
+.wechat-wall-lottery-icon {
+    background-position: -1.5rem 0;
+}
+.wechat-wall-type {
+    display: inline-block;
+    float: right;
+    vertical-align: middle;
+}
+.wechat-wall-type a {
+    vertical-align: middle;
+    margin-left: .15rem;
+    color: #090909;
+}
+.wechat-wall-type a:not(:last-child) {
+    margin-left: 0;
+}
+.wechat-wall-type a.on {
+    color: #68ceb7;
+}
+.block-wrap {
+    margin-top: .3rem;
+    padding-bottom: .3rem;
+}
+.barrage-manage {
+    background-color: #fff;
+}
+.block-title {
+    position: relative;
+    padding: .3rem 0 .3rem .3rem;
+    color: #68ceb7;
+    font-size: .3rem;
+    background-color: #fff;
+}
+.block-title:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: .3rem;
+    left: 0;
+    width: .15rem;
+    height: 1em;
+    background-color: #68ceb7;
+}
+.barrage-manage .block-title {
+    border-bottom: 1px solid #dcdcdc;
+}
+.block-content {
+    padding-left: .3rem;
+    font-size: 0;
+}
+.checkbox,
+.barrage-manage .block-content span {    
+    display: inline-block;
+    vertical-align: middle;
+    margin: .3rem 0;
+}
+.checkbox {
+    margin: .3rem;
+    width: .3rem;
+    height: .3rem;
+    border: 1px solid #68ceb7;
+    border-radius: 3px;
+}
+.barrage-manage .block-content {
+    background-color: #fff;    
+    border-bottom: 1px solid #dcdcdc;
+}
+.barrage-manage .block-content li {
+    font-size: 0;
+}
+.barrage-manage .block-content li:not(:last-child) {
+    border-bottom: 1px solid #dcdcdc;
+}
+.barrage-manage .block-content span {
+    font-size: .3rem;
+}
+.block-content .on .checkbox {
+    background-color: #68ceb7;
+}
+.block-operate ul {
+    float: right;
+    font-size: 0;
+}
+.block-operate .block-operate-item {
+    display: inline-block;
+    vertical-align: middle;
+    color: #68ceb7;
+    padding: .15rem .3rem;
+    border: 1px solid ;
+    margin: .3rem 0;
+    font-size: .3rem;
+    letter-spacing: 1px;
+}
+.block-operate .pass {
+    color: #fff;
+    background-color: #68ceb7;
+}
+.block-operate .block-operate-item:last-child {
+    margin: .3rem;
+}
+.card-item {
+    display: inline-block;
+    margin-right: .3rem;
+    width: 3.3rem;
+    background-color: #fff;
+    margin-top: .3rem;
+}
+.card-item-img-wrap {
+    width: 100%;
+    height: 2.3rem;
+}
+.card-item-text {
+    margin: .3rem;
+    font-size: .26rem;
+    text-align: center;
+    color: #090909;
+}
+.add-img {
+    position: relative;
+    border: 1px solid #dcdcdc;
+}
+.add-img:before,
+.add-img:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 1.35rem;
+    height: .1rem;
+    background-color: #dcdcdc;
+    border-radius: 5px;
+    margin: auto;
+}
+.add-img:after {
+    width: .1rem;
+    height: 1.35rem;
 }
 
 @media screen and (max-width: 960px) {
@@ -183,5 +367,5 @@ img {
        -moz-transform: rotate(0deg);
         -ms-transform: rotate(0deg);
             transform: rotate(0deg);
-    /*background-color: #00b38a;*/
+    /*background-color: #68ceb7;*/
 }       

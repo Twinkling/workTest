@@ -32,10 +32,10 @@
                     wWidth = screen.width;
                     wHeight = screen.height;
                 }
-                // if(window.orientation==90||window.orientation==-90){
-                //     wWidth = wHeight;
-                // }else if((window.orientation==180||window.orientation==0)){
-                // }
+                if(window.orientation==90||window.orientation==-90){
+                    wWidth = wHeight;
+                }else if((window.orientation==180||window.orientation==0)){
+                }
                 if (wWidth > wHeight) {
                     // wWidth = wHeight;
                 }
@@ -72,7 +72,12 @@
     <div id="wechatWall" class="wechat-wall-wrap">
         <div class="wechat-wall-img-wrap"><img src="imgs/wedding.jpg" alt=""></div>
         <div class="wechat-wall-barrage-content">
-            <div id="barrageContent" class="barrage-content-wrap"></div>
+            <div id="barrageContent" class="barrage-content-wrap">
+                <div class="barrage-item">
+                    <div class="barrage-item-img-wrap"><img src="imgs/author.jpg" alt=""></div>
+                    <span class="barrage-item-text">执子之手，与子偕老</span>
+                </div>
+            </div>
         </div>
         <div class="wechat-wall-barrage-wrap">
             <div class="wechat-wall-barrage-form">
@@ -83,6 +88,165 @@
             <div class="wechat-wall-maxMin-icon"></div>
         </div>
     </div>
+    <div class="wechat-wall-operate-wrap">
+        <div class="wechat-wall-lottery-wrap">
+            <div class="wechat-wall-lottery-icon"></div>
+            <span class="wechat-wall-lottery-text">抽奖</span>
+        </div>
+        <div class="wechat-wall-vote-wrap">
+            <div class="wechat-wall-vote-icon"></div>
+            <span class="wechat-wall-vote-text">投票</span>
+        </div>
+        <div class="wechat-wall-type"><a href="" class="on">活动模式</a><a href="">展会模式</a></div>
+    </div>
+    <button id="create">弹幕</button>
+    <div class="block-wrap barrage-manage">
+        <div class="block-title">弹幕管理</div>
+        <div class="block-content">
+            <ul>
+                <li class="on">
+                    <div class="checkbox"></div>
+                    <span>执子之手，与子偕老</span>
+                </li>
+                <li>
+                    <div class="checkbox"></div>
+                    <span>执子之手，与子偕老</span>
+                </li>
+                <li>
+                    <div class="checkbox"></div>
+                    <span>执子之手，与子偕老</span>
+                </li>
+                <li>
+                    <div class="checkbox"></div>
+                    <span>执子之手，与子偕老</span>
+                </li>
+                <li>
+                    <div class="checkbox"></div>
+                    <span>执子之手，与子偕老</span>
+                </li>
+            </ul>
+            <!-- <ul>
+                <li><span>暂无弹幕消息</span></li>
+            </ul> -->
+        </div>
+        <div class="block-operate clearfix">
+            <ul>
+                <li class="block-operate-item pass">通过审核</li>
+                <li class="block-operate-item">删除</li>
+            </ul>
+        </div>
+    </div>
+    <div class="block-wrap">
+        <div class="block-title">个性主题</div>
+        <div class="block-content">
+            <ul>
+                <li class="card-item">
+                    <div class="card-item-img-wrap"><img src="imgs/exhibition.jpg" alt=""></div>
+                    <div class="card-item-text"><span>农展</span></div>
+                </li>
+                <li class="card-item">
+                    <div class="card-item-img-wrap"><img src="imgs/wedding.jpg" alt=""></div>
+                    <div class="card-item-text"><span>婚礼</span></div>
+                </li>
+                <li class="card-item">
+                    <div class="card-item-img-wrap"><img src="imgs/nationalDay.jpg" alt=""></div>
+                    <div class="card-item-text"><span>国庆</span></div>
+                </li>
+                <li class="card-item">
+                    <div class="card-item-img-wrap add-img"></div>
+                    <div class="card-item-text"><span>添加活动背景</span></div>
+                </li>
+            </ul>
+        </div>
+        <!-- <div class="block-operate"></div> -->
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('.checkbox').click(function (e) {
+                e.stopPropagation();
+                $(this).parent().toggleClass('on');
+            });
+
+            var barrageContentArr = [
+                {img: 'imgs/author.jpg', content: '恭祝百年好合'},
+                {img: 'imgs/author.jpg', content: '早生贵子'},
+                {img: 'imgs/author.jpg', content: '喜结连理'},
+                {img: 'imgs/author.jpg', content: '祝福祝福'},
+                {img: 'imgs/author.jpg', content: '哈哈哈，恭祝喜结连理'},
+                {img: 'imgs/author.jpg', content: '好兄弟结婚了，祝贺了'},
+                {img: 'imgs/author.jpg', content: '好姐妹，祝你未来生活幸福美满'},
+                {img: 'imgs/author.jpg', content: '恭祝新郎新娘新婚大吉，顺带我也来测试下这个弹幕好用不'},
+                {img: 'imgs/author.jpg', content: '珠联璧合，百年好合，来看看弹幕能有多长，吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉'},
+            ]
+
+            function createBarrage(data) {
+                // <div class="barrage-item">
+                //     <div class="barrage-item-img-wrap"><img src="imgs/author.jpg" alt=""></div>
+                //     <span class="barrage-item-text">执子之手，与子偕老</span>
+                // </div>
+                var imgSrc = (data && data.img) ? data.img : 'imgs/author.jpg',
+                    barrageText = (data && data.content) ? data.content : '执子之手，与子偕老',
+                    domStr = `<div class="barrage-item"><div class="barrage-item-img-wrap"><img src="${imgSrc}" alt=""></div><span class="barrage-item-text">${barrageText}</span></div>`,
+                    $item = $(domStr);
+
+                var width = $('#barrageContent').width(),
+                    height = $('#barrageContent').height(),
+                    top = Math.random() * 100 << 0,
+                    time = (Math.random() * 10 << 0) + 5;
+
+                // var styleStr = `top:-webkit-calc(${top}% - 20px);top:-moz-calc(${top}% - 20px);top:calc(${top}% - 20px);left:${width}px`;
+                // $item.attr('style', styleStr);
+                $item.css({
+                    top: '-webkit-calc('+top+'% - 20px)',
+                    top: '-moz-calc('+top+'% - 20px)',
+                    top: 'calc('+top+'% - 20px)',
+                    left: width + 'px',
+                });
+
+                $('#barrageContent').append($item);
+
+                // setTimeout(function () {
+                //     alert(getComputedStyle($item[0], null).top)
+                // }, 1000);
+                //     alert($item.css('top'))
+                // if($item.css('top')) {
+                // }
+                // alert(getComputedStyle($item[0], null));
+                // $item.css('top')[0] == '-' ? $item.css('top', 0) : '';
+                // alert('dd');
+                var domWidth = $item.width(),
+                    finalLeft = 0 - domWidth * 2;
+
+                $item.animate({
+                    left: finalLeft + 'px',
+                }, time * 1000, 'linear', function () {
+                    $(this).remove();
+                });
+            }
+
+            $('#barrageForm').submit(function (e) {
+                // e.stopPropagation();
+                e.preventDefault();
+                var content = $(this).find('input').val(),
+                    data = {
+                        img: 'imgs/author.jpg', 
+                        content: content,
+                    };                
+                createBarrage(data);
+                $(this).find('input').val('');
+            });
+
+            function create() {
+                var time = 1;
+                for(var i = 0;i < time;i ++) {
+                    var ind = Math.random() * barrageContentArr.length << 0;
+                    var data = barrageContentArr[ind];
+                    createBarrage(data);
+                }
+            }
+            $('#create').click(create);
+        });
+    </script>
     <!--
     <script type="text/javascript">
         $(function () {
