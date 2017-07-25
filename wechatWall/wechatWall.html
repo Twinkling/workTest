@@ -73,10 +73,10 @@
         <div class="wechat-wall-img-wrap"><img src="imgs/wedding.jpg" alt=""></div>
         <div class="wechat-wall-barrage-content">
             <div id="barrageContent" class="barrage-content-wrap">
-                <div class="barrage-item">
+                <!-- <div class="barrage-item">
                     <div class="barrage-item-img-wrap"><img src="imgs/author.jpg" alt=""></div>
                     <span class="barrage-item-text">执子之手，与子偕老</span>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="wechat-wall-barrage-wrap">
@@ -99,7 +99,7 @@
         </div>
         <div class="wechat-wall-type"><a href="" class="on">活动模式</a><a href="">展会模式</a></div>
     </div>
-    <button id="create">弹幕</button>
+    <!-- <button id="create">弹幕</button> -->
     <div class="block-wrap barrage-manage">
         <div class="block-title">弹幕管理</div>
         <div class="block-content">
@@ -176,7 +176,7 @@
                 {img: 'imgs/author.jpg', content: '好兄弟结婚了，祝贺了'},
                 {img: 'imgs/author.jpg', content: '好姐妹，祝你未来生活幸福美满'},
                 {img: 'imgs/author.jpg', content: '恭祝新郎新娘新婚大吉，顺带我也来测试下这个弹幕好用不'},
-                {img: 'imgs/author.jpg', content: '珠联璧合，百年好合，来看看弹幕能有多长，吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉吉'},
+                {img: 'imgs/author.jpg', content: '珠联璧合，百年好合'},
             ]
 
             function createBarrage(data) {
@@ -191,29 +191,22 @@
 
                 var width = $('#barrageContent').width(),
                     height = $('#barrageContent').height(),
-                    top = Math.random() * 100 << 0,
+                    rate = Math.random(),
+                    top = rate * 100 << 0,
                     time = (Math.random() * 10 << 0) + 5;
 
-                // var styleStr = `top:-webkit-calc(${top}% - 20px);top:-moz-calc(${top}% - 20px);top:calc(${top}% - 20px);left:${width}px`;
-                // $item.attr('style', styleStr);
-                $item.css({
-                    top: '-webkit-calc('+top+'% - 20px)',
-                    top: '-moz-calc('+top+'% - 20px)',
-                    top: 'calc('+top+'% - 20px)',
-                    left: width + 'px',
-                });
+                (top >= 10 && $item.css({
+                                    top: '-webkit-calc('+top+'% - 20px)',
+                                    top: '-moz-calc('+top+'% - 20px)',
+                                    top: 'calc('+top+'% - 20px)',
+                                    left: width + 'px',
+                                })) || $item.css({
+                                            top: (rate * 20 << 0) + 'px',
+                                            left: width + 'px',
+                                        });
 
                 $('#barrageContent').append($item);
 
-                // setTimeout(function () {
-                //     alert(getComputedStyle($item[0], null).top)
-                // }, 1000);
-                //     alert($item.css('top'))
-                // if($item.css('top')) {
-                // }
-                // alert(getComputedStyle($item[0], null));
-                // $item.css('top')[0] == '-' ? $item.css('top', 0) : '';
-                // alert('dd');
                 var domWidth = $item.width(),
                     finalLeft = 0 - domWidth * 2;
 
@@ -232,12 +225,12 @@
                         img: 'imgs/author.jpg', 
                         content: content,
                     };                
-                createBarrage(data);
+                content != '' && createBarrage(data);
                 $(this).find('input').val('');
             });
 
             function create() {
-                var time = 1;
+                var time = 10;
                 for(var i = 0;i < time;i ++) {
                     var ind = Math.random() * barrageContentArr.length << 0;
                     var data = barrageContentArr[ind];

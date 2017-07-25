@@ -949,7 +949,7 @@ img {
     border-bottom: none; 
 }
 .filter-title-text.on {
-    color: #00bc8a;
+    color: #00b38a;
 }
 .filter-title-text.on i {
     border-bottom: .1rem solid;
@@ -995,7 +995,7 @@ img {
     border-radius: 3px;
 }
 .filter-item.on .filter-item-checkbox {
-    background-color: #00bc8a;
+    background-color: #00b38a;
 }
 .filter-reset-btn,
 .filter-save-btn {
@@ -1010,8 +1010,8 @@ img {
 .filter-save-btn {
     float: right;
     color: #fff;
-    background-color: #00bc8a;
-    border-color: #00bc8a;
+    background-color: #00b38a;
+    border-color: #00b38a;
 }
 .main-content-title {
     font-size: 0;
@@ -1160,9 +1160,99 @@ img {
     float: right;
     border: 1px solid;
     font-size: .26rem;
-    color: #00bc8a;
+    color: #00b38a;
     padding: .1rem .2rem;
 }
+
+/* 
+ * -- wechat login && register -- start --
+ */
+.login-register-wrap {
+    margin: .88rem 1rem;
+}
+.info-item {
+    position: relative;
+    padding: .34rem 0;
+    font-size: 0;
+}
+.info-item .login-img-wrap {
+    display: inline-block;
+    margin-right: .3rem;
+    width: .46rem;
+    height: .5rem;
+    text-align: right;
+}
+.login-img-wrap img {
+    width: auto;
+}
+.info-item-value {    
+    height: .5rem;
+    vertical-align: top;
+    font-size: .3rem;
+    color: #090909;
+
+    border: none;
+    outline: none;
+}
+.login .info-item-value {
+    width: calc(100% - .76rem);
+}
+.info-item-value + .border {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    border-bottom: 1px solid #dcdcdc;
+}
+.info-item-value:focus + .border {
+    border-bottom-color: #00b38a;
+}
+.login-register-submit-wrap {
+    margin: .64rem .2rem 0;
+}
+.login-submit {
+    width: 100%;
+    height: .8rem;
+    background-color: #00b38a;
+    font-size: .32rem;
+    outline: none;
+    border: none;
+    border-radius: 0;
+    color: #fff;
+}
+.login-register-reg {
+    margin: 0 1rem;
+    text-align: center;
+}
+.login-register-reg a {
+    color: #00b38a;
+    text-decoration: underline;
+}
+.info-item-title {
+    display: inline-block;
+    width: 1.47rem;
+
+    font-size: .3rem;
+    line-height: .5rem;
+    vertical-align: top;
+}
+.register .info-item-value {
+    width: calc(100% - 1.47rem);
+}
+.code {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 1.5rem;
+    height: .6rem;
+}
+/* 
+ * -- wechat login && register -- end --
+ */
+
 /*
  * -- wechat pages -- end --
  */
