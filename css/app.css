@@ -1104,6 +1104,115 @@ img {
  * -- second level pages -- end --
  */
 
+/* 
+ * -- chat page -- start --
+ */
+.chat-content-wrap {
+    margin: .3rem .3rem 1rem;
+    text-align: center;
+}
+.chat-content-friend,
+.chat-content-friend .chat-author-img-wrap {
+    float: left;
+}
+.chat-content-mine,
+.chat-content-mine .chat-author-img-wrap {
+    float: right;
+}
+.chat-author-img-wrap,
+.chat-content-msg-wrap {
+    display: inline-block;
+    vertical-align: top;
+}
+.chat-author-img-wrap {
+    width: .9rem;
+    height: .9rem;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.chat-content-msg-wrap {
+    padding: .3rem 0;
+}
+.chat-content-msg {
+    position: relative;
+    max-width: 4.35rem;
+    font-size: .3rem;
+    text-align: left;
+    padding: .2rem;
+    line-height: .44rem;
+
+    color: #090909;
+    background-color: #fff;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+}
+.chat-content-msg:before,
+.chat-content-msg:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: -13px;
+    width: 8px;
+    height: 8px;
+    color: #dcdcdc;
+    border-right: 13px solid;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+.chat-content-msg:after {
+    left: -11px;
+    border-right-color: #fff;
+}
+.chat-content-mine .chat-content-msg:before,
+.chat-content-mine .chat-content-msg:after {
+    left: auto;
+    right: -13px;
+    color: #dcdcdc;
+    border-left: 13px solid;
+    border-right: none;
+}
+.chat-content-mine .chat-content-msg:after {
+    right: -11px;
+    color: #00b38a;
+}
+.chat-content-friend .chat-content-msg-wrap {
+    padding-left: calc(13px + .3rem);
+}
+.chat-content-mine .chat-content-msg-wrap {
+    padding-right: calc(13px + .3rem);
+}
+.chat-content-mine .chat-content-msg {
+    background-color: #00b38a;
+}
+.chat-content-date {
+    display: inline-block;
+    padding: .1rem .3rem;
+    font-size: .26rem;
+    color: #fff;
+    background-color: #dcdcdc;
+    border-radius: 5px;
+}
+.chat-send-wrap {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 1rem;
+    color: #090909;
+    border-top: 1px solid #dcdcdc;
+}
+.chat-send-msg {
+    width: 100%;
+    height: 100%;
+    padding-left: .15rem;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    font-size: .3rem;
+}
+/* 
+ * -- chat page -- end --
+ */
+
 /*
  * -- wechat pages -- start --
  */
